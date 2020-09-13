@@ -1,6 +1,7 @@
 ---
 title: "First Gatsby Blog Post"
 date: "2020-01-18"
+tags: ["tag_A", "tag_B", "tag_C"]
 ---
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit.
