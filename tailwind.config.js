@@ -1,6 +1,8 @@
 module.exports = {
   theme: {
-    colors: { },
+    colors: {
+        red: '#ff0000'
+     },
     extend: {
       fontFamily: { }
     },
@@ -17,5 +19,17 @@ module.exports = {
       '1': 1
     }
   },
-  plugins: [],
+  plugins: [
+      function({ addComponents}) {
+          addComponents({
+              '.container': {
+                  maxWidth: '95%',
+                  '@screen lg': {
+                      width: '85%',
+                      maxWidth: '1340px'
+                  }
+              }
+          })
+      }
+  ],
 }
