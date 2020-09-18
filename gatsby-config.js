@@ -1,13 +1,6 @@
 module.exports = {
     plugins: [
-        {
-            resolve: 'gatsby-plugin-sass',
-            options: {
-                postCssPlugins: [
-                    require('tailwindcss')
-                ]
-            }
-        },
+        "gatsby-plugin-emotion",
         "gatsby-plugin-postcss",
         "gatsby-transformer-remark",
         {
@@ -16,6 +9,14 @@ module.exports = {
                 name: "src",
                 path: `${__dirname}/src/`
             }
-        }
+        },
+        {
+          resolve: 'gatsby-plugin-sass',
+          options: {
+              postCssPlugins: [
+                  require('tailwindcss')
+              ]
+          }
+      }
     ]
 }
