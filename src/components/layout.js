@@ -7,14 +7,16 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <div id="Main" className="py-8 bg-light-black">
+        {children}
+      </div>
       <Footer />
     </>
   );
 };
 
+export default Layout;
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export default Layout;

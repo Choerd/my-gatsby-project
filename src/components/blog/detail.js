@@ -15,25 +15,21 @@ const BlogDetail = props => {
   return (
     <li
       key={id}
-      className="w-full md:w-5/12 lg:w-3/10 border border-red p-4 mb-8 mx-4"
+      className="flex flex-col w-full md:w-5/12 lg:w-3/10 p-4 mb-8 mx-4 rounded bg-white"
     >
-      <h2 className="blog-title">{title}</h2>
+      <h2>{title}</h2>
       <ul className="flex my-2 flex-wrap">
         {tags.map(tag => (
-          <li className="px-4 py-1 mr-2 border border-red rounded-full">
-            {tag}
-          </li>
+          <li className="px-4 py-1 mr-2 border rounded-full">{tag}</li>
         ))}
       </ul>
-      <p className="blog-paragraph">{excerpt}</p>
-      <div className="flex justify-center">
-        <Link
-          to={`/blog/${slug}`}
-          className="px-4 py-2 mt-5 border border-red rounded-full"
-        >
-          Read more
-        </Link>
-      </div>
+      <p className="mb-auto">{excerpt}</p>
+      <Link
+        to={`/blog/${slug}`}
+        className="px-4 py-2 border rounded-full self-center"
+      >
+        Read more
+      </Link>
     </li>
   );
 };

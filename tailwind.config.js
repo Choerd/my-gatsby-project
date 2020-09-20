@@ -1,7 +1,9 @@
 module.exports = {
   theme: {
     colors: {
-      red: '#ff0000',
+      white: '#FFFFFF',
+      black: '#000000',
+      'light-black': '#17171d',
     },
     extend: {
       fontFamily: {
@@ -26,9 +28,9 @@ module.exports = {
         '3/10': '30%',
       },
       zIndex: {
-        '-1': -1,
-        0: 0,
+        '-1': '-1',
         1: 1,
+        2: 2,
       },
     },
   },

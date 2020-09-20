@@ -3,7 +3,7 @@ import Navigation from './navigation';
 
 const Header = () => {
   return (
-    <header className="mx-12 my-8">
+    <header className="px-8 py-6 bg-black text-white">
       <Navigation />
     </header>
   );

@@ -16,13 +16,15 @@ const BlogPost = props => {
 
   return (
     <Layout>
-      <div className="container m-auto">
+      <div className="container mx-auto text-white">
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   );
 };
+
+export default BlogPost;
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
@@ -34,8 +36,6 @@ BlogPost.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
-export default BlogPost;
 
 export const query = graphql`
   query($slug: String!) {
