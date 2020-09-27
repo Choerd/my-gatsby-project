@@ -14,12 +14,18 @@ import Github from '../../assets/svg/icon-github.svg';
 import Instagram from '../../assets/svg/icon-instagram.svg';
 import Linkedin from '../../assets/svg/icon-linkedin.svg';
 
+import highFive from '../../assets/images/high-five.png';
+
 const footerStyle = css`
   ${tw`flex flex-col flex-wrap sm:flex-row justify-between bg-gray-100 text-black px-8 pt-10 pb-8`}
   & > div {
-    ${tw`w-full mb-12 sm:w-1/2 lg:mb-0 lg:w-1/4`}
+    ${tw`w-full sm:w-1/2 lg:w-1/4`}
     &:not(:last-of-type) {
-      ${tw`sm:pr-8`}
+      ${tw`mb-12 lg:mb-0`}
+    }
+    &:nth-of-type(3),
+    :nth-of-type(4) {
+      ${tw`sm:mb-0`}
     }
     h5 {
       ${tw`mb-6 uppercase`}
@@ -28,7 +34,7 @@ const footerStyle = css`
       ${tw`mb-4`}
     }
     ul li {
-      ${tw`mb-4 uppercase`}
+      ${tw`uppercase`}
       &:not(:last-of-type) {
         ${tw`mb-4`}
       }
@@ -48,18 +54,45 @@ const footerStyle = css`
         ${tw`px-4 py-2 bg-transparent uppercase font-source-sans-pro-semi-bold`}
       }
     }
-    .colored-block {
+  }
+  .happy-image {
+    ${tw`relative mb-0 sm:mb-12`}
+    div {
       ${tw`bg-gray-200 absolute`}
       ${borderBottomLeft(tw`rounded-sm`)}
       top: -6em;
       right: -2em;
       width: 8em;
       height: 20em;
+      @media screen and (max-width: 1024px) {
+        top: -2em;
+        right: -2em;
+        width: 6em;
+        height: 15em;
+      }
+      @media screen and (max-width: 640px) {
+        top: 0;
+        right: -2em;
+        width: 6em;
+        height: 100%;
+      }
     }
-    .image {
-      ${tw`absolute`}
-      top: -1.5em;
-      right: -4em;
+    img {
+      position: absolute;
+      top: -4em;
+      right: -3em;
+      max-height: 300px;
+      @media screen and (max-width: 1024px) {
+        right: -5em;
+      }
+      @media screen and (max-width: 640px) {
+        height: 120%;
+        top: -10%;
+        right: -2em;
+      }
+    }
+    @media screen and (max-width: 640px) {
+      height: 10em;
     }
   }
 `;
@@ -131,9 +164,9 @@ const Footer = () => {
         </form>
       </div>
 
-      <div className="relative">
+      <div className="happy-image">
         <div className="colored-block" />
-        <Github className="image w-48 h-48" />
+        <img src={highFive} alt="high-five" />
       </div>
     </div>
   );
