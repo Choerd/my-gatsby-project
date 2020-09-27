@@ -21,7 +21,7 @@ const featuredBlogStyle = css`
     width: fit-content;
     :after {
       content: '';
-      margin-left: 20px;
+      margin-left: 12px;
       border-top: 6px solid transparent;
       border-left: 9px solid black;
       border-bottom: 6px solid transparent;
