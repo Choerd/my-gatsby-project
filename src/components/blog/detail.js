@@ -1,11 +1,62 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+
+import styled from '@emotion/styled';
+import tw from 'twin.macro';
 import PropTypes from 'prop-types';
+
+import Heading from '../heading';
+import Text from '../text';
+import { borderTopRight, borderBottomLeft } from '../styles/index';
+
+const borderRadius = tw`rounded-sm`;
+
+const BlogStyle = styled.li`
+  ${tw`relative mb-8 w-full mx-6 lg:mx-0 sm:w-2/5 lg:w-3/10`}
+  .featured-image { 
+    ${tw`w-2/3`}
+    position: absolute;
+    top: 20px;
+    left -20px;
+    ${borderTopRight(borderRadius)}
+  }
+  .content {
+    ${tw`p-4 bg-gray-100 text-black`}
+    padding-top: 36px;
+    ${borderBottomLeft(borderRadius)}
+    .title {
+      ${tw`mb-3 uppercase`}
+    }
+    .tags {
+      ${tw`flex flex-wrap`}
+      li {
+        ${tw`px-4 py-2 mr-2 mt-2`}
+        border: 3px solid;
+        ${borderTopRight(borderRadius)}
+        ${tw`border-gray-200`}
+      }
+    }
+    .excerpt {
+      ${tw`mb-8`}
+    }
+    .anchor {
+      ${tw`inline-block bg-gray-200 py-3 px-6 text-black uppercase`}
+      ${borderTopRight(borderRadius)}
+    }
+  }
+`;
 
 const BlogDetail = props => {
   const {
     node: {
-      frontmatter: { title, tags },
+      frontmatter: {
+        title,
+        tags,
+        featured: {
+          childImageSharp: { fluid },
+        },
+      },
       excerpt,
       id,
       fields: { slug },
@@ -13,24 +64,28 @@ const BlogDetail = props => {
   } = props;
 
   return (
-    <li
-      key={id}
-      className="flex flex-col w-full md:w-5/12 lg:w-3/10 p-4 mb-8 mx-4 rounded bg-white"
-    >
-      <h2>{title}</h2>
-      <ul className="flex my-2 flex-wrap">
-        {tags.map(tag => (
-          <li className="px-4 py-1 mr-2 border rounded-full">{tag}</li>
-        ))}
-      </ul>
-      <p className="mb-auto">{excerpt}</p>
-      <Link
-        to={`/blog/${slug}`}
-        className="px-4 py-2 border rounded-full self-center"
-      >
-        Read more
+    <BlogStyle key={id}>
+      <Img fluid={fluid} className="featured-image" />
+      <Link to={`/blog/${slug}`}>
+        <div className="content">
+          <Heading as="h4" className="title">
+            {title}
+          </Heading>
+          <Text weight="regular" size="regular" className="excerpt">
+            {excerpt}
+          </Text>
+          <ul className="tags">
+            {tags.map(tag => (
+              <li>
+                <Text weight="semiBold" size="regular">
+                  {tag}
+                </Text>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Link>
-    </li>
+    </BlogStyle>
   );
 };
 
@@ -41,6 +96,11 @@ BlogDetail.propTypes = {
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+      featured: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          fluid: PropTypes.shape({}).isRequired,
+        }).isRequired,
+      }).isRequired,
     }).isRequired,
     excerpt: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,

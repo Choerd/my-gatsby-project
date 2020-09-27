@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Footer = () => {
+import Copyright from './_copyright';
+import Footer from './_footer';
+
+const index = () => {
   return (
-    <footer className="px-8 py-6 bg-black text-white">
-      <p>
-        Design and Development by Sjors Eveleens &copy;{' '}
-        {new Date().getFullYear().toString()}{' '}
-      </p>
+    <footer>
+      <Footer />
+      <Copyright />
     </footer>
   );
 };
 
-export default Footer;
+export default index;

@@ -6,7 +6,7 @@ const BlogList = props => {
   const { edges } = props;
 
   return (
-    <ul className="flex flex-wrap justify-center container m-auto">
+    <ul className="flex flex-wrap justify-center lg:justify-between container m-auto">
       {edges.map(edge => (
         <BlogDetail {...edge} />
       ))}

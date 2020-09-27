@@ -16,7 +16,7 @@ const BlogPost = props => {
 
   return (
     <Layout>
-      <div className="container mx-auto text-white">
+      <div className="container mx-auto">
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
@@ -42,6 +42,13 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        featured {
+          childImageSharp {
+            fluid(maxWidth: 750) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       html
     }

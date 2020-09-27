@@ -14,6 +14,13 @@ const Blog = () => {
               frontmatter {
                 title
                 tags
+                featured {
+                  childImageSharp {
+                    fluid(maxWidth: 750) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
               excerpt
               id
