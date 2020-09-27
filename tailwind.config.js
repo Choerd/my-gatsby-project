@@ -41,6 +41,7 @@ module.exports = {
         '4/5': '80%',
         '1/3': '33.3%',
         '2/3': '66.6%',
+        '4/8': '45%',
       },
       borderRadius: {
         'none': '0',
@@ -50,17 +51,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    ({ addComponents }) => {
-      addComponents({
-        '.container': {
-          maxWidth: '95%',
-          '@screen lg': {
-            width: '85%',
-            maxWidth: '1340px',
-          },
-        },
-      });
-    },
-  ],
+  plugins: [],
 };

@@ -8,12 +8,10 @@ import PropTypes from 'prop-types';
 
 import Heading from '../heading';
 import Text from '../text';
-import { borderTopRight, borderBottomLeft } from '../styles/index';
-
-const borderRadius = tw`rounded-sm`;
+import { borderTopRight, borderBottomLeft, borderRadius } from '../styles';
 
 const BlogStyle = styled.li`
-  ${tw`relative mb-8 w-full mx-6 lg:mx-0 sm:w-2/5 lg:w-3/10`}
+  ${tw`relative mb-8 w-full sm:w-2/5 lg:w-3/10`}
   .featured-image { 
     ${tw`w-2/3`}
     position: absolute;

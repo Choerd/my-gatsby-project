@@ -16,7 +16,7 @@ const BlogPost = props => {
 
   return (
     <Layout>
-      <div className="container mx-auto">
+      <div>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>

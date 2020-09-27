@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 const Index = () => {
   return (
     <Layout>
-      <div className="container m-auto">
+      <div>
         <p>Hello World!</p>
       </div>
     </Layout>

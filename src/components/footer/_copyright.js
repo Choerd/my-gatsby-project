@@ -1,10 +1,13 @@
 import React from 'react';
 import tw, { css } from 'twin.macro';
 
+import { whiteSpace } from '../styles';
+
 import Text from '../text';
 
 const copyrightStyle = css`
-  ${tw`flex justify-between bg-gray-100 text-black px-8 py-4`}
+  ${whiteSpace}
+  ${tw`flex justify-between bg-gray-100 text-black py-4`}
 `;
 
 const Copyright = () => {

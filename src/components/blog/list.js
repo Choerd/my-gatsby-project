@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import tw, { css } from 'twin.macro';
 import BlogDetail from './detail';
+
+const blogListStyle = css`
+  ${tw`flex flex-wrap justify-center sm:justify-between`}
+`;
 
 const BlogList = props => {
   const { edges } = props;
 
   return (
-    <ul className="flex flex-wrap justify-center lg:justify-between container m-auto">
+    <ul css={blogListStyle}>
       {edges.map(edge => (
         <BlogDetail {...edge} />
       ))}

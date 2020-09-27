@@ -2,10 +2,15 @@ import React from 'react';
 import tw, { css } from 'twin.macro';
 
 import {
+  whiteSpace,
   borderTopRight,
   borderBottomRight,
   borderBottomLeft,
-} from '../styles/index';
+  spaceLarge,
+  spaceRegular,
+  spaceSmall,
+  spaceExtraSmall,
+} from '../styles';
 
 import Heading from '../heading';
 import Text from '../text';
@@ -13,11 +18,12 @@ import Text from '../text';
 import Github from '../../assets/svg/icon-github.svg';
 import Instagram from '../../assets/svg/icon-instagram.svg';
 import Linkedin from '../../assets/svg/icon-linkedin.svg';
-
 import highFive from '../../assets/images/high-five.png';
 
 const footerStyle = css`
-  ${tw`flex flex-col flex-wrap sm:flex-row justify-between bg-gray-100 text-black px-8 pt-10 pb-8`}
+  ${whiteSpace}
+  ${tw`flex flex-col flex-wrap sm:flex-row justify-between bg-gray-100 text-black pt-10 pb-8`}
+  border-top-left-radius: 12px;
   & > div {
     ${tw`w-full sm:w-1/2 lg:w-1/4`}
     &:not(:last-of-type) {
@@ -61,34 +67,37 @@ const footerStyle = css`
       ${tw`bg-gray-200 absolute`}
       ${borderBottomLeft(tw`rounded-sm`)}
       top: -6em;
-      right: -2em;
+      right: -${spaceLarge};
       width: 8em;
       height: 20em;
       @media screen and (max-width: 1024px) {
         top: -2em;
-        right: -2em;
+        right: -${spaceLarge};
         width: 6em;
         height: 15em;
       }
       @media screen and (max-width: 640px) {
         top: 0;
-        right: -2em;
+        right: -${spaceSmall};
         width: 6em;
         height: 100%;
+      }
+      @media screen and (max-width: 360px) {
+        right: -${spaceExtraSmall};
       }
     }
     img {
       position: absolute;
       top: -4em;
-      right: -3em;
+      right: -${spaceRegular};
       max-height: 300px;
       @media screen and (max-width: 1024px) {
-        right: -5em;
+        right: -${spaceLarge};
       }
       @media screen and (max-width: 640px) {
         height: 120%;
         top: -10%;
-        right: -2em;
+        right: -${spaceSmall};
       }
     }
     @media screen and (max-width: 640px) {
