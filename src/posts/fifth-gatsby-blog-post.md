@@ -10,11 +10,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit.
 ## Excepturi maxime
 
 reprehenderit accusamus, explicabo eligendi necessitatibus soluta!
-reprehenderit accusamus, explicabo eligendi necessitatibus soluta!
-reprehenderit accusamus, explicabo eligendi necessitatibus soluta!
-reprehenderit accusamus, explicabo eligendi necessitatibus soluta!
-reprehenderit accusamus, explicabo eligendi necessitatibus soluta!
-reprehenderit accusamus, explicabo eligendi necessitatibus soluta!
 
 ![gatsby tutorial](../assets/images/placeholder.jpg)
 

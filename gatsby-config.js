@@ -24,6 +24,18 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-module-resolver',
+      options: {
+        root: './src',
+        aliases: {
+          'components': './components',
+          'stylesheet': './components/stylesheet',
+          'images': './assets/images',
+          'svg': './assets/svg',
+        }
+      }
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

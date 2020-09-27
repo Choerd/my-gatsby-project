@@ -49,6 +49,10 @@ module.exports = {
         'lg': '16px',
         default: '16px',
       },
+      borderWidth: {
+        '3': '3px',
+        '5': '5px',
+      },
     },
   },
   plugins: [],

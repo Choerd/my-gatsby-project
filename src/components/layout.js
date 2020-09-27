@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import tw, { css } from 'twin.macro';
-import { whiteSpace } from './styles';
+import { whiteSpace } from 'stylesheet';
 
-import Header from './header';
-import Footer from './footer';
+import Header from 'components/header';
+import Footer from 'components/footer';
 
 const mainStyles = css`
   ${whiteSpace}

@@ -1,8 +1,7 @@
 import React from 'react';
 import tw, { css } from 'twin.macro';
+import { whiteSpace } from 'stylesheet';
 import Navigation from './navigation';
-
-import { whiteSpace } from '../styles';
 
 const headerStyle = css`
   ${whiteSpace}

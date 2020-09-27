@@ -1,9 +1,9 @@
 import React from 'react';
 import tw, { css } from 'twin.macro';
 
-import { whiteSpace } from '../styles';
+import { whiteSpace } from 'stylesheet';
 
-import Text from '../text';
+import Text from 'components/text';
 
 const copyrightStyle = css`
   ${whiteSpace}

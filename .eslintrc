@@ -13,6 +13,16 @@
         "document": true,
         "fetch": false
     },
+    "settings": {
+        "import/resolver": {
+          "alias": [
+            ["components", "./src/components"],
+            ["stylesheet", "./src/components/stylesheet"],
+            ["svg", "./src/assets/svg"],
+            ["images", "./src/assets/images"]
+          ]
+        }
+      },
     "rules": {
         "prettier/prettier": [
             "error",

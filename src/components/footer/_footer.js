@@ -7,18 +7,17 @@ import {
   borderBottomRight,
   borderBottomLeft,
   spaceLarge,
-  spaceRegular,
   spaceSmall,
   spaceExtraSmall,
-} from '../styles';
+} from 'stylesheet';
 
-import Heading from '../heading';
-import Text from '../text';
+import Heading from 'components/heading';
+import Text from 'components/text';
 
-import Github from '../../assets/svg/icon-github.svg';
-import Instagram from '../../assets/svg/icon-instagram.svg';
-import Linkedin from '../../assets/svg/icon-linkedin.svg';
-import highFive from '../../assets/images/high-five.png';
+import Github from 'svg/icon-github.svg';
+import Instagram from 'svg/icon-instagram.svg';
+import Linkedin from 'svg/icon-linkedin.svg';
+import highFive from 'images/high-five.png';
 
 const footerStyle = css`
   ${whiteSpace}
@@ -89,11 +88,8 @@ const footerStyle = css`
     img {
       position: absolute;
       top: -4em;
-      right: -${spaceRegular};
+      right: -${spaceLarge};
       max-height: 300px;
-      @media screen and (max-width: 1024px) {
-        right: -${spaceLarge};
-      }
       @media screen and (max-width: 640px) {
         height: 120%;
         top: -10%;
