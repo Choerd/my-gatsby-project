@@ -8,13 +8,6 @@ import Layout from 'components/layout';
 import Heading from 'components/heading';
 import Text from 'components/text';
 
-import {
-  borderTopRight,
-  borderBottomLeft,
-  borderBottomRight,
-  borderRadius,
-} from 'stylesheet';
-
 const featuredBlogStyle = css`
   .check-more {
     ${tw`uppercase mb-2 py-2 ml-auto flex items-center`}
@@ -28,9 +21,8 @@ const featuredBlogStyle = css`
     }
   }
   article {
-    ${borderBottomLeft(borderRadius)}
-    ${tw`bg-gray-100 text-black p-12 w-2/3 ml-auto mb-12 relative`}
-  h3 {
+    ${tw`bg-gray-100 text-black p-12 w-2/3 ml-auto mb-12 relative borderBottomLeft`}
+    h3 {
       ${tw`uppercase mb-6`}
     }
     .wrapper {
@@ -38,8 +30,7 @@ const featuredBlogStyle = css`
       .content {
         ${tw`w-3/5 pr-8 flex flex-col justify-between`}
         a {
-          ${borderTopRight(borderRadius)}
-          ${tw`inline-block py-4 px-8 bg-gray-200 uppercase self-start`}
+          ${tw`inline-block py-4 px-8 bg-gray-200 uppercase self-start borderTopRight`}
         }
       }
       .meta-data {
@@ -48,9 +39,8 @@ const featuredBlogStyle = css`
           ${tw`flex`}
           margin-bottom: -4em;
           li {
-            ${borderTopRight(borderRadius)}
-            ${tw`px-4 py-2 border-5 border-gray-200`}
-        &:not(:last-of-type) {
+            ${tw`px-4 py-2 border-5 border-gray-200 borderTopRight`}
+            &:not(:last-of-type) {
               ${tw`mr-4`}
             }
           }
@@ -60,7 +50,7 @@ const featuredBlogStyle = css`
           position: absolute;
           bottom: -6em;
           img {
-            ${borderBottomRight(borderRadius)}
+            ${tw`borderBottomRight`}
           }
         }
       }
@@ -72,38 +62,52 @@ const Index = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        markdownRemark {
-          frontmatter {
-            title
-            tags
-            featured {
-              childImageSharp {
-                fluid(maxWidth: 700) {
-                  ...GatsbyImageSharpFluid
+        allMarkdownRemark(
+          sort: { fields: frontmatter___date, order: DESC }
+          limit: 1
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                tags
+                featured {
+                  childImageSharp {
+                    fluid(maxWidth: 700) {
+                      ...GatsbyImageSharpFluid
+                    }
+                    id
+                  }
                 }
-                id
+              }
+              excerpt(pruneLength: 300)
+              fields {
+                slug
               }
             }
-          }
-          excerpt(pruneLength: 500)
-          fields {
-            slug
           }
         }
       }
     `
   );
+
   const {
-    markdownRemark: {
-      frontmatter: {
-        title,
-        tags,
-        featured: {
-          childImageSharp: { fluid },
+    allMarkdownRemark: {
+      edges: [
+        {
+          node: {
+            frontmatter: {
+              title,
+              tags,
+              featured: {
+                childImageSharp: { fluid },
+              },
+            },
+            excerpt,
+            fields: { slug },
+          },
         },
-      },
-      excerpt,
-      fields: { slug },
+      ],
     },
   } = data;
 

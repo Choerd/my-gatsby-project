@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from 'components/layout';
-import BlogList from 'components/blog/list';
+import BlogDetail from 'components/blog/detail';
 
 const Blog = () => {
   const data = useStaticQuery(
@@ -34,11 +34,17 @@ const Blog = () => {
     `
   );
 
-  const { allMarkdownRemark } = data;
+  const {
+    allMarkdownRemark: { edges },
+  } = data;
 
   return (
     <Layout>
-      <BlogList {...allMarkdownRemark} />
+      <ul className="flex flex-wrap justify-center sm:justify-between">
+        {edges.map(edge => (
+          <BlogDetail {...edge} />
+        ))}
+      </ul>
     </Layout>
   );
 };

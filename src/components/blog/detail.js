@@ -6,41 +6,34 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 
-import { borderTopRight, borderBottomLeft, borderRadius } from 'stylesheet';
 import Heading from 'components/heading';
 import Text from 'components/text';
 
 const BlogStyle = styled.li`
   ${tw`relative mb-8 w-full sm:w-2/5 lg:w-3/10`}
-  .featured-image { 
-    ${tw`w-2/3`}
-    position: absolute;
+  .featured-image {
+    ${tw`w-2/3 absolute borderTopRight`}
     top: 20px;
-    left -20px;
-    ${borderTopRight(borderRadius)}
+    left: -20px;
   }
   .content {
-    ${tw`p-4 bg-gray-100 text-black`}
+    ${tw`p-4 bg-gray-100 text-black borderBottomLeft`}
     padding-top: 36px;
-    ${borderBottomLeft(borderRadius)}
     .title {
       ${tw`mb-3 uppercase`}
     }
     .tags {
       ${tw`flex flex-wrap`}
       li {
-        ${tw`px-4 py-2 mr-2 mt-2`}
         border: 3px solid;
-        ${borderTopRight(borderRadius)}
-        ${tw`border-gray-200`}
+        ${tw`px-4 py-2 mr-2 mt-2 border-gray-200 borderTopRight`}
       }
     }
     .excerpt {
       ${tw`mb-8`}
     }
     .anchor {
-      ${tw`inline-block bg-gray-200 py-3 px-6 text-black uppercase`}
-      ${borderTopRight(borderRadius)}
+      ${tw`inline-block bg-gray-200 py-3 px-6 text-black uppercase borderTopRight`}
     }
   }
 `;

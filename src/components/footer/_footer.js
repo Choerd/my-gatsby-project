@@ -1,15 +1,6 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import tw, { css } from 'twin.macro';
-
-import {
-  whiteSpace,
-  borderTopRight,
-  borderBottomRight,
-  borderBottomLeft,
-  spaceLarge,
-  spaceSmall,
-  spaceExtraSmall,
-} from 'stylesheet';
 
 import Heading from 'components/heading';
 import Text from 'components/text';
@@ -20,8 +11,7 @@ import Linkedin from 'svg/icon-linkedin.svg';
 import highFive from 'images/high-five.png';
 
 const footerStyle = css`
-  ${whiteSpace}
-  ${tw`flex flex-col flex-wrap sm:flex-row justify-between bg-gray-100 text-black pt-10 pb-8`}
+  ${tw`whiteSpace flex flex-col flex-wrap sm:flex-row justify-between bg-gray-100 text-black pt-10 pb-8`}
   border-top-left-radius: 12px;
   & > div {
     ${tw`w-full sm:w-1/2 lg:w-1/4`}
@@ -48,12 +38,10 @@ const footerStyle = css`
       }
     }
     form {
-      ${borderTopRight(tw`rounded-lg`)}
-      ${tw`bg-gray-200 p-1 flex mt-4`}
+      ${tw`borderTopRight bg-gray-200 p-1 flex mt-4`}
       max-width: 325px;
       .input-text {
-        ${borderBottomRight(tw`rounded-sm`)}
-        ${tw`pl-2 flex-grow w-0`}
+        ${tw`borderBottomRight pl-2 flex-grow w-0`}
       }
       .input-submit {
         ${tw`px-4 py-2 bg-transparent uppercase font-source-sans-pro-semi-bold`}
@@ -63,37 +51,27 @@ const footerStyle = css`
   .happy-image {
     ${tw`relative mb-0 sm:mb-12`}
     div {
-      ${tw`bg-gray-200 absolute`}
-      ${borderBottomLeft(tw`rounded-sm`)}
+      ${tw`borderBottomLeft`}
       top: -6em;
-      right: -${spaceLarge};
-      width: 8em;
       height: 20em;
       @media screen and (max-width: 1024px) {
         top: -2em;
-        right: -${spaceLarge};
-        width: 6em;
         height: 15em;
       }
       @media screen and (max-width: 640px) {
         top: 0;
-        right: -${spaceSmall};
-        width: 6em;
         height: 100%;
-      }
-      @media screen and (max-width: 360px) {
-        right: -${spaceExtraSmall};
       }
     }
     img {
       position: absolute;
       top: -4em;
-      right: -${spaceLarge};
+      right: -100px;
       max-height: 300px;
       @media screen and (max-width: 640px) {
         height: 120%;
         top: -10%;
-        right: -${spaceSmall};
+        right: -50px;
       }
     }
     @media screen and (max-width: 640px) {
@@ -109,19 +87,25 @@ const Footer = () => {
         <Heading as="h5">Explore</Heading>
         <ul>
           <li>
-            <Text weight="regular" size="regular">
-              Home
-            </Text>
+            <Link to="/">
+              <Text weight="regular" size="regular">
+                Home
+              </Text>
+            </Link>
           </li>
           <li>
-            <Text weight="regular" size="regular">
-              Blog
-            </Text>
+            <Link to="/blog/">
+              <Text weight="regular" size="regular">
+                Blog
+              </Text>
+            </Link>
           </li>
           <li>
-            <Text weight="regular" size="regular">
-              About
-            </Text>
+            <Link to="/about/">
+              <Text weight="regular" size="regular">
+                About
+              </Text>
+            </Link>
           </li>
         </ul>
       </div>
@@ -130,28 +114,46 @@ const Footer = () => {
         <Heading as="h5">Socials</Heading>
         <ul>
           <li>
-            <div>
-              <Github className="w-6 h-6 mr-3" />
-              <Text as="span" weight="regular" size="regular">
-                devsjors
-              </Text>
-            </div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/devsjors"
+            >
+              <div>
+                <Github className="w-6 h-6 mr-3" />
+                <Text as="span" weight="regular" size="regular">
+                  devsjors
+                </Text>
+              </div>
+            </a>
           </li>
           <li>
-            <div>
-              <Linkedin className="w-6 h-6 mr-3" />
-              <Text as="span" weight="regular" size="regular">
-                Sjors Eveleens
-              </Text>
-            </div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/sjors-eveleens-50327712b/"
+            >
+              <div>
+                <Linkedin className="w-6 h-6 mr-3" />
+                <Text as="span" weight="regular" size="regular">
+                  Sjors Eveleens
+                </Text>
+              </div>
+            </a>
           </li>
           <li>
-            <div>
-              <Instagram className="w-6 h-6 mr-3" />
-              <Text as="span" weight="regular" size="regular">
-                sjorseveleens
-              </Text>
-            </div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/sjorseveleens/"
+            >
+              <div>
+                <Instagram className="w-6 h-6 mr-3" />
+                <Text as="span" weight="regular" size="regular">
+                  sjorseveleens
+                </Text>
+              </div>
+            </a>
           </li>
         </ul>
       </div>
@@ -169,7 +171,7 @@ const Footer = () => {
         </form>
       </div>
 
-      <div className="happy-image">
+      <div className="happy-image right small">
         <div className="colored-block" />
         <img src={highFive} alt="high-five" />
       </div>

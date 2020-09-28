@@ -1,6 +1,6 @@
 ---
-title: "Fifth Gatsby Blog Post"
-date: "2020-01-05"
+title: "Sixth Gatsby Blog Post"
+date: "2020-01-06"
 featured: "../assets/images/placeholder.jpg"
 tags: ["tag_A", "tag_B", "tag_C"]
 ---

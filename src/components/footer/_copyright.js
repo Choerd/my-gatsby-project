@@ -1,18 +1,10 @@
 import React from 'react';
-import tw, { css } from 'twin.macro';
-
-import { whiteSpace } from 'stylesheet';
 
 import Text from 'components/text';
 
-const copyrightStyle = css`
-  ${whiteSpace}
-  ${tw`flex justify-between bg-gray-100 text-black py-4`}
-`;
-
 const Copyright = () => {
   return (
-    <div css={copyrightStyle}>
+    <div className="whiteSpace flex justify-between bg-gray-100 text-black py-4">
       <Text weight="regular" size="small">
         &copy; {new Date().getFullYear().toString()} | Sjors Eveleens
       </Text>

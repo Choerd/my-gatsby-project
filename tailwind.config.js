@@ -21,6 +21,7 @@ module.exports = {
         }
       },
       screens: {
+        xs: '360px',
         sm: '640px',
         md: '768px',
         lg: '1024px',
@@ -41,13 +42,9 @@ module.exports = {
         '4/5': '80%',
         '1/3': '33.3%',
         '2/3': '66.6%',
-        '4/8': '45%',
       },
       borderRadius: {
-        'none': '0',
-        'sm': '12px',
-        'lg': '16px',
-        default: '16px',
+        default: '12px',
       },
       borderWidth: {
         '3': '3px',
@@ -55,5 +52,40 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({addComponents}) {
+      addComponents({
+        '.borderTopLeft': {
+          borderRadius: '0px 12px 12px 12px'
+        },
+        '.borderTopRight': {
+          borderRadius: '12px 0px 12px 12px'
+        },
+        '.borderBottomRight': {
+          borderRadius: '12px 12px 0px 12px'
+        },
+        '.borderBottomLeft': {
+          borderRadius: '12px 12px 12px 0px'
+        },
+        '.whiteSpace': {
+          '@screen xs': {
+            paddingLeft: '25px',
+            paddingRight: '25px',
+          },
+          '@screen sm': {
+            paddingLeft: '50px',
+            paddingRight: '50px',
+          },
+          '@screen md': {
+            paddingLeft: '75px',
+            paddingRight: '75px',
+          },
+          '@screen lg': {
+            paddingLeft: '100px',
+            paddingRight: '100px',
+          }
+        }
+      })
+    }
+  ],
 };
