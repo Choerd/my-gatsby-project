@@ -15,10 +15,7 @@ const StyledBase = () => {
 
 const StyledPrimary = () => {
   return css`
-    ${tw`inline-block py-4 px-8 bg-test borderTopRight`}
-    background-size: 100% 200%;
-    background-position: top;
-    transition: background-position 0.1s ease-in-out;
+    ${tw`inline-block py-4 px-8 borderTopRight gradient-dark`}
     :hover {
       background-position: bottom;
     }
@@ -28,10 +25,7 @@ const StyledPrimary = () => {
 const StyledSecondary = () => {
   return css`
     span {
-      ${tw`bg-gray`}
-      background-size: 100% 200%;
-      background-position: top;
-      transition: background-position 0.1s ease-in-out;
+      ${tw`gradient-extra-light`}
     }
     :after {
       ${tw`inline-block ml-4`}
@@ -39,6 +33,34 @@ const StyledSecondary = () => {
       border-top: 6px solid transparent;
       border-left: 9px solid black;
       border-bottom: 6px solid transparent;
+    }
+    :hover {
+      span {
+        background-position: bottom;
+      }
+    }
+  `;
+};
+
+const StyledTertiary = () => {
+  return css`
+    ${tw`font-source-sans-pro-bold normal-case`}
+    span {
+      ${tw`gradient-light`}
+    }
+    :hover {
+      span {
+        background-position: bottom;
+      }
+    }
+  `;
+};
+
+const StyledQuaternary = () => {
+  return css`
+    ${tw`font-open-sans-regular text-sm`}
+    span {
+      ${tw`gradient-light`}
     }
     :hover {
       span {
@@ -56,6 +78,10 @@ const StyledAnchor = styled(Link)`
         return StyledPrimary;
       case 'secondary':
         return StyledSecondary;
+      case 'tertiary':
+        return StyledTertiary;
+      case 'quaternary':
+        return StyledQuaternary;
       default:
         return StyledPrimary;
     }

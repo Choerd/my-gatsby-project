@@ -4,6 +4,7 @@ import tw, { css } from 'twin.macro';
 
 import Heading from 'components/heading';
 import Text from 'components/text';
+import Anchor from 'components/anchor';
 
 import Github from 'svg/icon-github.svg';
 import Instagram from 'svg/icon-instagram.svg';
@@ -87,25 +88,19 @@ const Footer = () => {
         <Heading as="h5">Explore</Heading>
         <ul>
           <li>
-            <Link to="/">
-              <Text weight="regular" size="regular">
-                Home
-              </Text>
-            </Link>
+            <Anchor to="/" type="quaternary">
+              Home
+            </Anchor>
           </li>
           <li>
-            <Link to="/blog/">
-              <Text weight="regular" size="regular">
-                Blog
-              </Text>
-            </Link>
+            <Anchor to="/blog/" type="quaternary">
+              Blog
+            </Anchor>
           </li>
           <li>
-            <Link to="/about/">
-              <Text weight="regular" size="regular">
-                About
-              </Text>
-            </Link>
+            <Anchor to="/about/" type="quaternary">
+              About
+            </Anchor>
           </li>
         </ul>
       </div>
@@ -121,9 +116,7 @@ const Footer = () => {
             >
               <div>
                 <Github className="w-6 h-6 mr-3" />
-                <Text as="span" weight="regular" size="regular">
-                  devsjors
-                </Text>
+                <Anchor type="quaternary">devsjors</Anchor>
               </div>
             </a>
           </li>
@@ -135,9 +128,7 @@ const Footer = () => {
             >
               <div>
                 <Linkedin className="w-6 h-6 mr-3" />
-                <Text as="span" weight="regular" size="regular">
-                  Sjors Eveleens
-                </Text>
+                <Anchor type="quaternary">Sjors Eveleens</Anchor>
               </div>
             </a>
           </li>
@@ -149,9 +140,7 @@ const Footer = () => {
             >
               <div>
                 <Instagram className="w-6 h-6 mr-3" />
-                <Text as="span" weight="regular" size="regular">
-                  sjorseveleens
-                </Text>
+                <Anchor type="quaternary">sjorseveleens</Anchor>
               </div>
             </a>
           </li>

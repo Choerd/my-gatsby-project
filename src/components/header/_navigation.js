@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import tw, { css } from 'twin.macro';
 
 import Text from 'components/text';
+import Anchor from 'components/anchor';
 
 const navigationStyle = css`
   .nav-items {
@@ -28,18 +29,14 @@ const Navigation = () => {
 
       <ul className="nav-items">
         <li>
-          <Link to="/blog/">
-            <Text weight="bold" size="large">
-              Blog
-            </Text>
-          </Link>
+          <Anchor to="/blog/" type="tertiary">
+            Blog
+          </Anchor>
         </li>
         <li>
-          <Link to="/about/">
-            <Text weight="bold" size="large">
-              About
-            </Text>
-          </Link>
+          <Anchor to="/about/" type="tertiary">
+            About
+          </Anchor>
         </li>
       </ul>
     </nav>

@@ -17,7 +17,10 @@ const BlogStyle = styled.li`
     left: -20px;
   }
   .content {
-    ${tw`p-4 bg-gray-100 text-black borderBottomLeft`}
+    ${tw`p-4 gradient-light text-black borderBottomLeft`}
+    &:hover {
+      background-position: bottom;
+    }
     padding-top: 36px;
     .title {
       ${tw`mb-3 uppercase`}
@@ -25,7 +28,7 @@ const BlogStyle = styled.li`
     .tags {
       ${tw`flex flex-wrap`}
       li {
-        ${tw`px-4 py-2 mr-2 mt-2 border-3 border-gray-200 borderTopRight`}
+        ${tw`px-4 py-2 mr-2 mt-2 border-3 border-gray-300 borderTopRight`}
       }
     }
     .excerpt {

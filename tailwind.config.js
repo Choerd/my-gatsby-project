@@ -11,19 +11,15 @@ module.exports = {
         white: '#fffff0',
         black: '#424242',
         gray: {
-          '100': '#e0e0e0',
-          '200': '#bdbdbd',
-          '300': '#9e9e9e',
-          '400': '#757575',
-          '500': '#616161',
-          '600': '#424242',
-          '700': '#212121',
-        }
+          100: '#e0e0e0',
+          200: '#bdbdbd',
+          300: '#9e9e9e',
+          400: '#757575',
+          500: '#616161',
+          600: '#424242',
+          700: '#212121',
+        },
       },
-      gradients: theme => ({
-        'gray': ['to top', `${theme('colors.gray.300')} 50%`, 'transparent 50%'],
-        'test': ['to top', `${theme('colors.gray.300')} 50%`, `${theme('colors.gray.200')} 50%`],
-      }),
       screens: {
         xs: '360px',
         sm: '640px',
@@ -54,27 +50,48 @@ module.exports = {
         default: '12px',
       },
       borderWidth: {
-        '3': '3px',
-        '5': '5px',
+        3: '3px',
+        5: '5px',
       },
     },
   },
   plugins: [
-    require('tailwindcss-plugins/gradients'),
-    function({addComponents}) {
-      addComponents({
+    function ({ addComponents, theme }) {
+      const gradients = {
+        '.gradient-extra-light': {
+          backgroundImage: `linear-gradient(to top, ${theme('colors.gray.100')} 50%, transparent 50%)`,
+          backgroundSize: '100% 200%',
+          backgroundPosition: 'top',
+          transition: 'background-position 0.1s ease-in-out',
+        },
+        '.gradient-light': {
+          backgroundImage: `linear-gradient(to top, ${theme('colors.gray.200')} 50%, ${theme('colors.gray.100')} 50%)`,
+          backgroundSize: '100% 200%',
+          backgroundPosition: 'top',
+          transition: 'background-position 0.1s ease-in-out',
+        },
+        '.gradient-dark': {
+          backgroundImage: `linear-gradient(to top, ${theme('colors.gray.300')} 50%, ${theme('colors.gray.200')} 50%)`,
+          backgroundSize: '100% 200%',
+          backgroundPosition: 'top',
+          transition: 'background-position 0.1s ease-in-out',
+        },
+      };
+      const borders = {
         '.borderTopLeft': {
-          borderRadius: '0px 12px 12px 12px'
+          borderRadius: '0px 12px 12px 12px',
         },
         '.borderTopRight': {
-          borderRadius: '12px 0px 12px 12px'
+          borderRadius: '12px 0px 12px 12px',
         },
         '.borderBottomRight': {
-          borderRadius: '12px 12px 0px 12px'
+          borderRadius: '12px 12px 0px 12px',
         },
         '.borderBottomLeft': {
-          borderRadius: '12px 12px 12px 0px'
+          borderRadius: '12px 12px 12px 0px',
         },
+      };
+      const whiteSpace = {
         '.whiteSpace': {
           '@screen xs': {
             paddingLeft: '25px',
@@ -91,9 +108,13 @@ module.exports = {
           '@screen lg': {
             paddingLeft: '100px',
             paddingRight: '100px',
-          }
-        }
-      })
-    }
+          },
+        },
+      };
+
+      addComponents(gradients);
+      addComponents(borders);
+      addComponents(whiteSpace);
+    },
   ],
 };
