@@ -25,8 +25,7 @@ const BlogStyle = styled.li`
     .tags {
       ${tw`flex flex-wrap`}
       li {
-        border: 3px solid;
-        ${tw`px-4 py-2 mr-2 mt-2 border-gray-200 borderTopRight`}
+        ${tw`px-4 py-2 mr-2 mt-2 border-3 border-gray-200 borderTopRight`}
       }
     }
     .excerpt {

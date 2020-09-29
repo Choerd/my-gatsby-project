@@ -1,62 +1,63 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Img from 'gatsby-image';
-import tw, { css } from 'twin.macro';
+// import Img from 'gatsby-image';
+// import tw, { css } from 'twin.macro';
 
 import Layout from 'components/layout';
-import Heading from 'components/heading';
-import Text from 'components/text';
+import Anchor from 'components/anchor';
+// import Heading from 'components/heading';
+// import Text from 'components/text';
 
-const featuredBlogStyle = css`
-  .check-more {
-    ${tw`uppercase mb-2 py-2 ml-auto flex items-center`}
-    width: fit-content;
-    :after {
-      content: '';
-      margin-left: 12px;
-      border-top: 6px solid transparent;
-      border-left: 9px solid black;
-      border-bottom: 6px solid transparent;
-    }
-  }
-  article {
-    ${tw`bg-gray-100 text-black p-12 w-2/3 ml-auto mb-12 relative borderBottomLeft`}
-    h3 {
-      ${tw`uppercase mb-6`}
-    }
-    .wrapper {
-      ${tw`flex`}
-      .content {
-        ${tw`w-3/5 pr-8 flex flex-col justify-between`}
-        a {
-          ${tw`inline-block py-4 px-8 bg-gray-200 uppercase self-start borderTopRight`}
-        }
-      }
-      .meta-data {
-        ${tw`w-2/5`}
-        ul {
-          ${tw`flex`}
-          margin-bottom: -4em;
-          li {
-            ${tw`px-4 py-2 border-5 border-gray-200 borderTopRight`}
-            &:not(:last-of-type) {
-              ${tw`mr-4`}
-            }
-          }
-        }
-        .featured-image {
-          width: calc(100% + 6em);
-          position: absolute;
-          bottom: -6em;
-          img {
-            ${tw`borderBottomRight`}
-          }
-        }
-      }
-    }
-  }
-`;
+// const featuredBlogStyle = css`
+//   .check-more {
+//     ${tw`uppercase mb-2 py-2 ml-auto flex items-center`}
+//     width: fit-content;
+//     :after {
+//       content: '';
+//       margin-left: 12px;
+//       border-top: 6px solid transparent;
+//       border-left: 9px solid black;
+//       border-bottom: 6px solid transparent;
+//     }
+//   }
+//   article {
+//     ${tw`bg-gray-100 text-black p-12 w-2/3 ml-auto mb-12 relative borderBottomLeft`}
+//     h3 {
+//       ${tw`uppercase mb-6`}
+//     }
+//     .wrapper {
+//       ${tw`flex`}
+//       .content {
+//         ${tw`w-3/5 pr-8 flex flex-col justify-between`}
+//         a {
+//           ${tw`inline-block py-4 px-8 bg-gray-200 uppercase self-start borderTopRight`}
+//         }
+//       }
+//       .meta-data {
+//         ${tw`w-2/5`}
+//         ul {
+//           ${tw`flex`}
+//           margin-bottom: -4em;
+//           li {
+//             ${tw`px-4 py-2 border-5 border-gray-200 borderTopRight`}
+//             &:not(:last-of-type) {
+//               ${tw`mr-4`}
+//             }
+//           }
+//         }
+//         .featured-image {
+//           width: calc(100% + 6em);
+//           position: absolute;
+//           bottom: -6em;
+//           img {
+//             ${tw`borderBottomRight`}
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 const Index = () => {
   const data = useStaticQuery(
@@ -76,11 +77,11 @@ const Index = () => {
                     fluid(maxWidth: 700) {
                       ...GatsbyImageSharpFluid
                     }
-                    id
                   }
                 }
               }
               excerpt(pruneLength: 300)
+              id
               fields {
                 slug
               }
@@ -113,7 +114,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <div css={featuredBlogStyle}>
+      {/* <div css={featuredBlogStyle}>
         <Link to="/blog/">
           <Text className="check-more" weight="semiBold" size="regular">
             Check out more posts
@@ -146,7 +147,17 @@ const Index = () => {
             </div>
           </div>
         </article>
-      </div>
+      </div> */}
+
+      <Anchor to="/blog/" type="primary">
+        Button
+      </Anchor>
+      <br />
+      <br />
+      <br />
+      <Anchor to="/blog/" type="secondary">
+        Button
+      </Anchor>
     </Layout>
   );
 };

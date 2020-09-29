@@ -20,6 +20,10 @@ module.exports = {
           '700': '#212121',
         }
       },
+      gradients: theme => ({
+        'gray': ['to top', `${theme('colors.gray.300')} 50%`, 'transparent 50%'],
+        'test': ['to top', `${theme('colors.gray.300')} 50%`, `${theme('colors.gray.200')} 50%`],
+      }),
       screens: {
         xs: '360px',
         sm: '640px',
@@ -29,6 +33,9 @@ module.exports = {
       },
       spacing: {
         '3/10': '30%',
+      },
+      inset: {
+        50: '50%',
       },
       zIndex: {
         '-1': '-1',
@@ -53,6 +60,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('tailwindcss-plugins/gradients'),
     function({addComponents}) {
       addComponents({
         '.borderTopLeft': {

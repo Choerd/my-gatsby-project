@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const HeaderStyle = styled.div`
+const StyledHeading = styled.div`
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-variant: normal;
@@ -45,10 +45,12 @@ const HeaderStyle = styled.div`
   line-height: 1;
 `;
 
-const Heading = ({ as = 'h1', ...props }) => <HeaderStyle as={as} {...props} />;
+const Heading = ({ as = 'h1', ...props }) => (
+  <StyledHeading as={as} {...props} />
+);
+
+export default Heading;
 
 Heading.propTypes = {
   as: PropTypes.string.isRequired,
 };
-
-export default Heading;

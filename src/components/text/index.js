@@ -37,24 +37,26 @@ const baseStyling = () => {
   `;
 };
 
-const TextStyle = styled.div`
+const StyledText = styled.div`
   ${baseStyling}
-  ${props => {
-    return css`
-      font-family: ${fontFamily(props.weight)};
-      font-size: ${fontSize(props.size)};
-    `;
-  }}
+  ${props => css`
+    font-family: ${fontFamily(props.weight)};
+    font-size: ${fontSize(props.size)};
+  `}
 `;
 
 const Text = ({ as = 'p', weight = 'regular', size = 'regular', ...props }) => (
-  <TextStyle as={as} weight={weight} size={size} {...props} />
+  <StyledText as={as} weight={weight} size={size} {...props} />
 );
 
+export default Text;
+
 Text.propTypes = {
-  as: PropTypes.string.isRequired,
+  as: PropTypes.string,
   weight: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
 };
 
-export default Text;
+Text.defaultProps = {
+  as: 'p',
+};
