@@ -53,10 +53,12 @@ export default Text;
 
 Text.propTypes = {
   as: PropTypes.string,
-  weight: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
+  weight: PropTypes.string,
+  size: PropTypes.string,
 };
 
 Text.defaultProps = {
   as: 'p',
+  weight: 'regular',
+  size: 'regular',
 };

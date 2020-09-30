@@ -1,14 +1,13 @@
 import React from 'react';
 import tw, { css } from 'twin.macro';
 
-import Heading from 'components/heading';
-import Text from 'components/text';
-import Anchor from 'components/anchor';
+import Heading from 'elements/heading';
+import Text from 'elements/text';
+import Anchor from 'elements/anchor';
 
 import Github from 'svg/icon-github.svg';
 import Instagram from 'svg/icon-instagram.svg';
 import Linkedin from 'svg/icon-linkedin.svg';
-import highFive from 'images/high-five.png';
 
 const footerStyle = css`
   ${tw`container flex flex-col flex-wrap sm:flex-row justify-between text-black pt-10 pb-8`}

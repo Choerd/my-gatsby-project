@@ -39,7 +39,7 @@ module.exports = {
         root: './src',
         aliases: {
           'components': './components',
-          'stylesheet': './components/stylesheet',
+          'elements': './elements',
           'images': './assets/images',
           'svg': './assets/svg',
         }

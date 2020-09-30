@@ -7,8 +7,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 
-import Heading from 'components/heading';
-import Text from 'components/text';
+import Heading from 'elements/heading';
+import Text from 'elements/text';
 
 const BlogStyle = styled.li`
   ${tw`relative mb-8 w-full sm:w-2/5 lg:w-3/10`}

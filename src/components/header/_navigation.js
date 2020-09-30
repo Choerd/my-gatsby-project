@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import tw, { css } from 'twin.macro';
 
-import Text from 'components/text';
-import Anchor from 'components/anchor';
+import Text from 'elements/text';
+import Anchor from 'elements/anchor';
 
 const navigationStyle = css`
   ${tw`container`}

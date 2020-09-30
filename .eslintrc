@@ -17,7 +17,7 @@
         "import/resolver": {
           "alias": [
             ["components", "./src/components"],
-            ["stylesheet", "./src/components/stylesheet"],
+            ["elements", "./src/elements"],
             ["svg", "./src/assets/svg"],
             ["images", "./src/assets/images"]
           ]
