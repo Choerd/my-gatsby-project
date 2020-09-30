@@ -40,7 +40,9 @@ const Index = () => {
         Weights:
       </Text>
       <Text weight="regular">Paragraph - regular</Text>
+      <br />
       <Text weight="semiBold">Paragraph - semi bold</Text>
+      <br />
       <Text weight="bold">Paragraph - bold</Text>
       <br />
       <br />
