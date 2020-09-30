@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import uniqid from 'uniqid';
 
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
@@ -69,7 +70,7 @@ const Blogpost = props => {
           </Text>
           <ul className="tags">
             {tags.map(tag => (
-              <li>
+              <li key={uniqid()}>
                 <Text weight="semiBold" size="regular">
                   {tag}
                 </Text>

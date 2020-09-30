@@ -6,6 +6,7 @@ import Text from 'components/text';
 import Anchor from 'components/anchor';
 
 const navigationStyle = css`
+  ${tw`container`}
   .nav-items {
     ${tw`flex items-center`}
     li:not(:last-of-type) {

@@ -17,11 +17,13 @@ const SEO = ({ title, description, meta, lang }) => {
     `
   );
   const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata.title;
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         { name: `description`, content: metaDescription },
         { property: `og:title`, content: title },
@@ -35,13 +37,14 @@ const SEO = ({ title, description, meta, lang }) => {
 export default SEO;
 
 SEO.defaultProps = {
+  title: ``,
   description: ``,
   meta: [],
   lang: `en`,
 };
 
 SEO.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   lang: PropTypes.string,

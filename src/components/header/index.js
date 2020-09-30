@@ -3,7 +3,7 @@ import tw, { css } from 'twin.macro';
 import Navigation from './_navigation';
 
 const headerStyle = css`
-  ${tw`whiteSpace bg-gray-100 text-black py-4`}
+  ${tw`bg-gray-100 text-black py-4`}
 `;
 
 const Header = () => {

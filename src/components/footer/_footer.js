@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import tw, { css } from 'twin.macro';
 
 import Heading from 'components/heading';
@@ -12,7 +11,7 @@ import Linkedin from 'svg/icon-linkedin.svg';
 import highFive from 'images/high-five.png';
 
 const footerStyle = css`
-  ${tw`whiteSpace flex flex-col flex-wrap sm:flex-row justify-between bg-gray-100 text-black pt-10 pb-8`}
+  ${tw`container flex flex-col flex-wrap sm:flex-row justify-between text-black pt-10 pb-8`}
   border-top-left-radius: 12px;
   & > div {
     ${tw`w-full sm:w-1/2 lg:w-1/4`}
@@ -116,7 +115,7 @@ const Footer = () => {
             >
               <div>
                 <Github className="w-6 h-6 mr-3" />
-                <Anchor type="quaternary">devsjors</Anchor>
+                devsjors
               </div>
             </a>
           </li>
@@ -128,7 +127,7 @@ const Footer = () => {
             >
               <div>
                 <Linkedin className="w-6 h-6 mr-3" />
-                <Anchor type="quaternary">Sjors Eveleens</Anchor>
+                Sjors Eveleens
               </div>
             </a>
           </li>
@@ -140,7 +139,7 @@ const Footer = () => {
             >
               <div>
                 <Instagram className="w-6 h-6 mr-3" />
-                <Anchor type="quaternary">sjorseveleens</Anchor>
+                sjorseveleens
               </div>
             </a>
           </li>
@@ -160,10 +159,7 @@ const Footer = () => {
         </form>
       </div>
 
-      <div className="happy-image right small">
-        <div className="colored-block" />
-        <img src={highFive} alt="high-five" />
-      </div>
+      <div>Place image right here</div>
     </div>
   );
 };

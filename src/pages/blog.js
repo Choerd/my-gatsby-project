@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import uniqid from 'uniqid';
 
 import Layout from 'components/layout';
 import Blogpost from 'components/blogpost';
@@ -42,7 +43,7 @@ const Blog = () => {
     <Layout>
       <ul className="flex flex-wrap justify-center sm:justify-between">
         {edges.map(edge => (
-          <Blogpost {...edge} />
+          <Blogpost key={uniqid()} {...edge} />
         ))}
       </ul>
     </Layout>

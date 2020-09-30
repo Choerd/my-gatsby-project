@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <>
       <SEO />
       <Header />
-      <main className="whiteSpace py-8">{children}</main>
+      <main className="container py-8">{children}</main>
       <Footer />
     </>
   );

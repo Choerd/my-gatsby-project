@@ -57,6 +57,33 @@ module.exports = {
   },
   plugins: [
     function ({ addComponents, theme }) {
+      const containers = {
+        '.container': {
+          position: 'relative',
+          margin: '0 auto',
+          '@screen xs': {
+            paddingLeft: '25px',
+            paddingRight: '25px',
+          },
+          '@screen sm': {
+            paddingLeft: '50px',
+            paddingRight: '50px',
+          },
+          '@screen md': {
+            paddingLeft: '75px',
+            paddingRight: '75px',
+          },
+          '@screen lg': {
+            paddingLeft: '100px',
+            paddingRight: '100px',
+          },
+          '@screen xl': {
+            paddingLeft: '0px',
+            paddingRight: '0px',
+            maxWidth: theme('screens.xl'),
+          },
+        }
+      }
       const gradients = {
         '.gradient-extra-light': {
           backgroundImage: `linear-gradient(to top, ${theme('colors.gray.100')} 50%, transparent 50%)`,
@@ -91,30 +118,10 @@ module.exports = {
           borderRadius: '12px 12px 12px 0px',
         },
       };
-      const whiteSpace = {
-        '.whiteSpace': {
-          '@screen xs': {
-            paddingLeft: '25px',
-            paddingRight: '25px',
-          },
-          '@screen sm': {
-            paddingLeft: '50px',
-            paddingRight: '50px',
-          },
-          '@screen md': {
-            paddingLeft: '75px',
-            paddingRight: '75px',
-          },
-          '@screen lg': {
-            paddingLeft: '100px',
-            paddingRight: '100px',
-          },
-        },
-      };
 
+      addComponents(containers);
       addComponents(gradients);
       addComponents(borders);
-      addComponents(whiteSpace);
     },
   ],
 };
