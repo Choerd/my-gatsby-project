@@ -1,12 +1,21 @@
+const tailwind = require('tailwindcss')
+
 module.exports = {
+  siteMetadata: {
+    title: 'Sjors Eveleens | Blog',
+    description: 'A collection of my experience',
+  },
   plugins: [
-    'gatsby-plugin-emotion',
     'gatsby-plugin-postcss',
+    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-emotion',
     'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        postCssPlugins: [require('tailwindcss')],
+        postCssPlugins: [tailwind],
       },
     },
     {
@@ -36,8 +45,6 @@ module.exports = {
         }
       }
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

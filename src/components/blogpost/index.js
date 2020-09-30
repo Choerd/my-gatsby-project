@@ -40,7 +40,7 @@ const BlogStyle = styled.li`
   }
 `;
 
-const BlogDetail = props => {
+const Blogpost = props => {
   const {
     node: {
       frontmatter: {
@@ -82,9 +82,9 @@ const BlogDetail = props => {
   );
 };
 
-export default BlogDetail;
+export default Blogpost;
 
-BlogDetail.propTypes = {
+Blogpost.propTypes = {
   node: PropTypes.shape({
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,

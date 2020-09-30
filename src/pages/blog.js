@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from 'components/layout';
-import BlogDetail from 'components/blog/detail';
+import Blogpost from 'components/blogpost';
 
 const Blog = () => {
   const data = useStaticQuery(
@@ -42,7 +42,7 @@ const Blog = () => {
     <Layout>
       <ul className="flex flex-wrap justify-center sm:justify-between">
         {edges.map(edge => (
-          <BlogDetail {...edge} />
+          <Blogpost {...edge} />
         ))}
       </ul>
     </Layout>
