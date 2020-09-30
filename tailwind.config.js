@@ -124,4 +124,7 @@ module.exports = {
       addComponents(borders);
     },
   ],
+  corePlugins: {
+    container: false,
+  }
 };
