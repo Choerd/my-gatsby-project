@@ -43,7 +43,7 @@ const Blog = () => {
     <Layout>
       <ul className="flex flex-wrap justify-center sm:justify-between">
         {edges.map(edge => (
-          <Blogpost key={uniqid()} {...edge} />
+          <Blogpost size="small" key={uniqid()} {...edge} />
         ))}
       </ul>
     </Layout>

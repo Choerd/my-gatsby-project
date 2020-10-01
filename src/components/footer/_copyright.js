@@ -4,7 +4,7 @@ import Text from 'elements/text';
 
 const Copyright = () => {
   return (
-    <div className="container flex justify-between bg-gray-100 text-black py-4">
+    <div className="container footer-copyright">
       <Text weight="regular" size="small">
         &copy; {new Date().getFullYear().toString()} | Sjors Eveleens
       </Text>

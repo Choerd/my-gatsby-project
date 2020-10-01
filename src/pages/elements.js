@@ -49,16 +49,24 @@ const Index = () => {
       <Text size="large" weight="bold">
         Anchors:
       </Text>
-      <Anchor type="primary">Button - primary</Anchor>
+      <Anchor to="/elements/" type="primary">
+        Button - primary
+      </Anchor>
       <br />
       <br />
-      <Anchor type="secondary">Button - secondary</Anchor>
+      <Anchor to="/elements/" type="secondary">
+        Button - secondary
+      </Anchor>
       <br />
       <br />
-      <Anchor type="tertiary">Button - tertiary</Anchor>
+      <Anchor to="/elements/" type="tertiary">
+        Button - tertiary
+      </Anchor>
       <br />
       <br />
-      <Anchor type="quaternary">Button - quaternary</Anchor>
+      <Anchor to="/elements/" type="quaternary">
+        Button - quaternary
+      </Anchor>
     </Layout>
   );
 };

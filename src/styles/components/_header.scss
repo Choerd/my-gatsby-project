@@ -1,0 +1,9 @@
+header {
+  @apply bg-gray-100 text-black py-4;
+  nav {
+    @apply flex items-center justify-between;
+    ul {
+      @apply flex items-center;
+    }
+  }
+}

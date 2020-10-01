@@ -1,0 +1,41 @@
+footer {
+  @apply bg-gray-100 text-black;
+  .footer-main {
+    @apply flex flex-col flex-wrap justify-between pt-10 pb-8;
+    border-top-left-radius: 12px;
+    @screen sm {
+      @apply flex-row;
+    }
+    .footer-section {
+      @apply w-full;
+      h5 {
+        @apply mb-6 uppercase;
+      }
+      ul li {
+        @apply uppercase;
+        div {
+          @apply flex items-center;
+        }
+      }
+      form {
+        @apply flex bg-gray-200 p-1 mt-4;
+        max-width: 325px;
+        .input-text {
+          @apply flex-grow w-0;
+        }
+        .input-submit {
+          @apply bg-transparent px-4 py-2 uppercase font-source-sans-pro-semi-bold;
+        }
+      }
+      @screen sm {
+        @apply w-1/2;
+      }
+      @screen lg {
+        @apply w-1/4;
+      }
+    }
+  }
+  .footer-copyright {
+    @apply flex justify-between py-4
+  }
+}

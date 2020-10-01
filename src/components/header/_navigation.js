@@ -1,23 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import tw, { css } from 'twin.macro';
 
 import Text from 'elements/text';
 import Anchor from 'elements/anchor';
 
-const navigationStyle = css`
-  ${tw`container`}
-  .nav-items {
-    ${tw`flex items-center`}
-    li:not(:last-of-type) {
-      padding-right: 2rem;
-    }
-  }
-`;
-
 const Navigation = () => {
   return (
-    <nav css={navigationStyle} className="flex justify-between">
+    <nav className="container">
       <ul>
         <li className="py-2">
           <Link to="/">
@@ -28,8 +17,8 @@ const Navigation = () => {
         </li>
       </ul>
 
-      <ul className="nav-items">
-        <li>
+      <ul>
+        <li className="mr-6">
           <Anchor to="/blog/" type="tertiary">
             Blog
           </Anchor>
