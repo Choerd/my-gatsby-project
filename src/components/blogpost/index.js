@@ -6,8 +6,9 @@ import PropTypes from 'prop-types';
 
 import Heading from 'elements/heading';
 import Text from 'elements/text';
+import Anchor from 'elements/anchor';
 
-import ConditionalWrapper from './_conditional_wrapper';
+import ConditionalWrapper from './_conditional-wrapper';
 
 const Blogpost = ({ size, ...props }) => {
   const {
@@ -27,26 +28,31 @@ const Blogpost = ({ size, ...props }) => {
 
   return (
     <ConditionalWrapper key={id} condition={size === 'regular'}>
-      <Img fluid={fluid} className="featured-image" />
-      <Link to={`/blog/${slug}`}>
-        <div className="content">
-          <Heading as="h4" className="title">
-            {title}
-          </Heading>
-          <Text weight="regular" size="regular" className="excerpt">
-            {excerpt}
-          </Text>
-          <ul className="tags">
-            {tags.map(tag => (
-              <li key={uniqid()}>
-                <Text weight="semiBold" size="regular">
-                  {tag}
-                </Text>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Link>
+      <div className="blogpost-content">
+        <Heading as={`${size === 'regular' ? 'h4' : 'h3'}`} className="title">
+          {title}
+        </Heading>
+
+        <ul className="tags">
+          {tags.map(tag => (
+            <li key={uniqid()}>
+              <Text weight="semiBold" size="regular">
+                {tag}
+              </Text>
+            </li>
+          ))}
+        </ul>
+
+        <Text weight="regular" size="regular" className="excerpt">
+          {excerpt}
+        </Text>
+
+        <Anchor type="primary" to={`/blog/${slug}`}>
+          Read post
+        </Anchor>
+      </div>
+
+      <Img fluid={fluid} className="blogpost-image" />
     </ConditionalWrapper>
   );
 };
