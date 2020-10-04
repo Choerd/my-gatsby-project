@@ -1,4 +1,4 @@
-import { css } from 'twin.macro';
+import { css, theme } from 'twin.macro';
 
 export const baseStyling = () => {
   return css`
@@ -29,19 +29,47 @@ export const fontFamily = as => {
 };
 
 export const fontSize = as => {
+  return css`
+    font-size: ${fontSizeSmall(as)};
+    @media screen and (min-width: ${theme('screens.md')}) {
+      font-size: ${fontSizeLarge(as)};
+    }
+  `;
+};
+
+const fontSizeLarge = as => {
   switch (as) {
     case 'h1':
       return '72px;';
     case 'h2':
-      return '64px;';
-    case 'h3':
       return '48px;';
+    case 'h3':
+      return '40px;';
     case 'h4':
-      return '24px;';
+      return '32px;';
     case 'h5':
-      return '20px;';
+      return '28px;';
     case 'h6':
-      return '16px';
+      return '24px';
+    default:
+      return '72px;';
+  }
+};
+
+const fontSizeSmall = as => {
+  switch (as) {
+    case 'h1':
+      return '48px;';
+    case 'h2':
+      return '40px;';
+    case 'h3':
+      return '32px;';
+    case 'h4':
+      return '28px;';
+    case 'h5':
+      return '24px;';
+    case 'h6':
+      return '20px';
     default:
       return '72px;';
   }

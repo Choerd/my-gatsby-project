@@ -1,6 +1,6 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { css } from 'twin.macro';
 
 import { baseStyling, fontFamily, fontSize } from './styles';
@@ -10,7 +10,7 @@ const StyledHeading = styled.div`
   ${({ as }) => {
     return css`
       font-family: ${fontFamily(as)};
-      font-size: ${fontSize(as)};
+      ${fontSize(as)}
     `;
   }}
 `;
