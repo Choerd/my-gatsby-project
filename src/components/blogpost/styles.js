@@ -30,22 +30,24 @@ export const StyledBlogList = styled.li`
 
 const centerStyle = () => {
   return css`
-    @media screen and (max-width: ${theme('screens.sm')}) {
-      width: calc(100% - 20px);
-      margin-left: auto;
-    }
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    margin-bottom: 20px;
   `;
 };
 export const StyledBlogArticle = styled.article`
   ${centerStyle}
-  ${tw`relative flex flex-col w-full md:ml-auto`}
-  @media screen and (min-width: ${theme(
-    'screens.lg'
-  )}) {
-    width: 75%;
+  ${tw`relative flex flex-col`}
+  @media screen and (min-width: ${theme('screens.md')}) {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+  @media screen and (min-width: ${theme('screens.lg')}) {
+    width: calc(75% - 20px);
+    margin-left: auto;
   }
   @media screen and (min-width: ${theme('screens.xl')}) {
-    width: 50%;
+    width: calc(50% - 20px);
   }
 
   .blogpost-content {
@@ -53,7 +55,7 @@ export const StyledBlogArticle = styled.article`
     ${tw`p-4 md:p-8 text-black bg-gray-100 borderBottomLeft md:flex md:flex-wrap`}
     padding-top: 36px;
     .title {
-      ${tw`uppercase`}
+      ${tw`uppercase mb-4`}
     }
     .tags {
       ${tw`flex flex-wrap my-3 md:w-1/2 order-2`}
@@ -84,4 +86,4 @@ export const StyledBlogArticle = styled.article`
       height: calc(50% + 20px);
     }
   }
-`;
+}`;

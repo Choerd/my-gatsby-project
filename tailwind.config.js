@@ -30,7 +30,11 @@ module.exports = {
       spacing: {
         '3/10': '30%',
       },
+      margin: {
+        '20': '20px'
+      },
       inset: {
+        15: '15%',
         50: '50%',
       },
       zIndex: {
@@ -83,7 +87,43 @@ module.exports = {
             maxWidth: theme('screens.xl'),
           },
         }
-      }
+      };
+      const styleImage = {
+        '.styleImageLeft': {
+          '@screen xs': {
+            marginLeft: '-25px',
+          },
+          '@screen sm': {
+            marginLeft: '-50px',
+          },
+          '@screen md': {
+            marginLeft: '-75px',
+          },
+          '@screen lg': {
+            marginLeft: '-100px',
+          },
+          '@screen xl': {
+            marginLeft: '0px',
+          },
+        },
+        '.styleImageRight': {
+          '@screen xs': {
+            marginRight: '-25px',
+          },
+          '@screen sm': {
+            marginRight: '-50px',
+          },
+          '@screen md': {
+            marginRight: '-75px',
+          },
+          '@screen lg': {
+            marginRight: '-100px',
+          },
+          '@screen xl': {
+            marginRight: '0px',
+          },
+        }
+      };
       const gradients = {
         '.gradient-extra-light': {
           backgroundImage: `linear-gradient(to top, ${theme('colors.gray.100')} 50%, transparent 50%)`,
@@ -120,6 +160,7 @@ module.exports = {
       };
 
       addComponents(containers);
+      addComponents(styleImage);
       addComponents(gradients);
       addComponents(borders);
     },

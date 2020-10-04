@@ -5,7 +5,7 @@ export const StyledBase = () => {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-variant: normal;
-    ${tw`font-source-sans-pro-semi-bold uppercase`}
+    ${tw`font-source-sans-pro-semi-bold uppercase text-black`}
   `;
 };
 

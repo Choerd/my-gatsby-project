@@ -2,8 +2,10 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from 'components/layout';
-
 import Blogpost from 'components/blogpost';
+import Intro from 'components/intro';
+
+import Anchor from 'elements/anchor';
 
 const Index = () => {
   const data = useStaticQuery(
@@ -44,7 +46,13 @@ const Index = () => {
 
   return (
     <Layout>
-      <Blogpost size="large" {...node[0]} />
+      <Intro />
+      <div className="flex flex-col justify-end mb-12">
+        <Anchor to="/blog/" type="secondary" className="ml-auto mr-20 mb-4">
+          Check out more posts
+        </Anchor>
+        <Blogpost size="large" {...node[0]} />
+      </div>
     </Layout>
   );
 };
