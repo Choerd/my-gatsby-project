@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import uniqid from 'uniqid';
 import PropTypes from 'prop-types';

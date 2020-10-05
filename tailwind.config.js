@@ -26,6 +26,7 @@ module.exports = {
         md: '768px',
         lg: '1024px',
         xl: '1440px',
+        xxl: '1640px',
       },
       spacing: {
         '3/10': '30%',
@@ -49,6 +50,7 @@ module.exports = {
         '4/5': '80%',
         '1/3': '33.3%',
         '2/3': '66.6%',
+        '1/8': '12.5%',
       },
       borderRadius: {
         default: '12px',
@@ -65,6 +67,8 @@ module.exports = {
         '.container': {
           position: 'relative',
           margin: '0 auto',
+          paddingLeft: '12px',
+          paddingRight: '12px',
           '@screen xs': {
             paddingLeft: '25px',
             paddingRight: '25px',
@@ -82,14 +86,17 @@ module.exports = {
             paddingRight: '100px',
           },
           '@screen xl': {
-            paddingLeft: '0px',
-            paddingRight: '0px',
             maxWidth: theme('screens.xl'),
           },
+          '@screen xxl': {
+            paddingLeft: '0px',
+            paddingRight: '0px',
+          }
         }
       };
       const styleImage = {
         '.styleImageLeft': {
+          marginLeft: '-12px',
           '@screen xs': {
             marginLeft: '-25px',
           },
@@ -107,6 +114,7 @@ module.exports = {
           },
         },
         '.styleImageRight': {
+          marginRight: '-12px',
           '@screen xs': {
             marginRight: '-25px',
           },

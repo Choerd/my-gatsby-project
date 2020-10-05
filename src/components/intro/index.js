@@ -25,7 +25,13 @@ const Intro = () => {
         </Anchor>
       </div>
 
-      <Image border="borderTopLeft" offset="100" src={Test} />
+      <Image
+        border="borderTopLeft"
+        offset="100"
+        align="right"
+        size="large"
+        src={Test}
+      />
     </div>
   );
 };

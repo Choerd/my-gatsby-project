@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import tw, { theme, css } from 'twin.macro';
 
+const centerStyle = () => {
+  return css`
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    margin-bottom: 20px;
+  `;
+};
+
 export const StyledBlogList = styled.li`
   ${tw`relative flex flex-col mb-8 w-full sm:w-2/5 lg:w-3/10`}
   .blogpost-content {
@@ -28,28 +36,23 @@ export const StyledBlogList = styled.li`
   }
 `;
 
-const centerStyle = () => {
-  return css`
-    width: calc(100% - 20px);
-    margin-left: 20px;
-    margin-bottom: 20px;
-  `;
-};
 export const StyledBlogArticle = styled.article`
   ${centerStyle}
   ${tw`relative flex flex-col`}
-  @media screen and (min-width: ${theme('screens.md')}) {
+  @media screen and (min-width: ${theme(
+    'screens.md'
+  )}) {
     margin-left: 0px;
     margin-right: 20px;
+    width: calc(75% - 20px);
   }
   @media screen and (min-width: ${theme('screens.lg')}) {
-    width: calc(75% - 20px);
     margin-left: auto;
+    width: calc(70% - 20px);
   }
-  @media screen and (min-width: ${theme('screens.xl')}) {
+  @media screen and (min-width: 1350px) {
     width: calc(50% - 20px);
   }
-
   .blogpost-content {
     order: 2;
     ${tw`p-4 md:p-8 text-black bg-gray-100 borderBottomLeft md:flex md:flex-wrap`}
@@ -86,4 +89,4 @@ export const StyledBlogArticle = styled.article`
       height: calc(50% + 20px);
     }
   }
-}`;
+`;
