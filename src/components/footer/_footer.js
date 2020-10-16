@@ -40,10 +40,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/devsjors"
+              className="secondary-animation"
             >
               <div>
                 <Github className="w-6 h-6 mr-3" />
-                devsjors
+                <span className="gradient-light">devsjors</span>
               </div>
             </a>
           </li>
@@ -52,10 +53,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/sjors-eveleens-50327712b/"
+              className="secondary-animation"
             >
               <div>
                 <Linkedin className="w-6 h-6 mr-3" />
-                Sjors Eveleens
+                <span className="gradient-light">Sjors Eveleens</span>
               </div>
             </a>
           </li>
@@ -64,17 +66,19 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.instagram.com/sjorseveleens/"
+              className="secondary-animation"
             >
               <div>
                 <Instagram className="w-6 h-6 mr-3" />
-                sjorseveleens
+                <span className="gradient-light">sjorseveleens</span>
               </div>
             </a>
           </li>
         </ul>
       </div>
 
-      <div className="footer-section mb-12 sm:mb-0">
+      {/* <div className="footer-section mb-12 sm:mb-0"> */}
+      <div className="footer-section">
         <Heading as="h5">Project together</Heading>
         <Text weight="regular" size="regular" className="mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -87,7 +91,7 @@ const Footer = () => {
         </form>
       </div>
 
-      <div className="footer-section">Place image right here</div>
+      {/* <div className="footer-section">Place image right here</div> */}
     </div>
   );
 };

@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import ConditionalWrapper from './_conditional-wrapper';
 
-const StyledImage = ({ src, border, align, size, classes, offset }) => {
+const StyledImage = ({ src, border, align, size, classes }) => {
   return (
     <ConditionalWrapper
       className={classes}
       condition={align === 'right'}
       size={size}
-      offset={offset}
     >
       <div className={border}>
         <img src={src} alt="high-five" />
@@ -22,7 +21,6 @@ export default StyledImage;
 
 StyledImage.defaultProps = {
   classes: null,
-  offset: null,
 };
 
 StyledImage.propTypes = {
@@ -31,5 +29,4 @@ StyledImage.propTypes = {
   align: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   classes: PropTypes.string,
-  offset: PropTypes.string,
 };

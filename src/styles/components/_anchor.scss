@@ -1,0 +1,6 @@
+a.secondary-animation {
+  @apply font-open-sans-regular text-sm;
+  :hover span {
+    background-position: bottom;
+  }
+}

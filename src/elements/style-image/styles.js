@@ -3,7 +3,7 @@ import tw, { css, theme } from 'twin.macro';
 
 export const StyledBase = size => {
   return css`
-    ${tw`w-full sm:w-1/4 overflow-hidden sm:overflow-visible mt-0`}
+    ${tw`w-full sm:w-1/4 overflow-hidden sm:overflow-visible`}
     div {
       ${tw`bg-gray-100 w-1/4 sm:w-full relative`}
       ${size === 'large' ? tw`sm:w-full` : tw`sm:w-3/4`}
@@ -24,16 +24,6 @@ export const StyledBase = size => {
 export const StyledImageRight = styled.div`
   ${({ size }) => StyledBase(size)}
   ${tw`ml-auto styleImageRight`}
-  ${({ offset }) => {
-    return css`
-      @media screen and (min-width: ${theme('screens.sm')}) {
-        margin-top: -${offset}px;
-      }
-      @media screen and (min-width: ${theme('screens.md')}) {
-        margin-top: ${offset}px;
-      }
-    `;
-  }}
   div {
     ${tw`ml-auto`}
   }

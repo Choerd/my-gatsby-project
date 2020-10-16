@@ -5,11 +5,11 @@ import Text from 'elements/text';
 import Anchor from 'elements/anchor';
 import Image from 'elements/style-image';
 
-import Test from 'images/show-brains.png';
+import Brains from 'images/show-brains.png';
 
 const Intro = () => {
   return (
-    <div className="flex flex-col md:flex-row mb-12 md:mb-24 lg:mb-32">
+    <div className="flex flex-col md:flex-row md:mb-24 lg:mb-32">
       <div className="w-full sm:w-3/4 xl:w-1/2">
         <Heading as="h1" className="uppercase mb-6 text-black">
           Welcome to my workspace
@@ -27,10 +27,10 @@ const Intro = () => {
 
       <Image
         border="borderTopLeft"
-        offset="100"
         align="right"
         size="large"
-        src={Test}
+        src={Brains}
+        classes="-mt-6 md:mt-0"
       />
     </div>
   );

@@ -9,7 +9,7 @@ import Anchor from 'elements/anchor';
 
 import ConditionalWrapper from './_conditional-wrapper';
 
-const Blogpost = ({ size, ...props }) => {
+const Blogpost = ({ size, classes, ...props }) => {
   const {
     node: {
       frontmatter: {
@@ -26,7 +26,11 @@ const Blogpost = ({ size, ...props }) => {
   } = props;
 
   return (
-    <ConditionalWrapper key={id} condition={size === 'regular'}>
+    <ConditionalWrapper
+      classes={classes}
+      key={id}
+      condition={size === 'regular'}
+    >
       <div className="blogpost-content">
         <Heading as={`${size === 'regular' ? 'h4' : 'h3'}`} className="title">
           {title}
@@ -58,6 +62,10 @@ const Blogpost = ({ size, ...props }) => {
 
 export default Blogpost;
 
+Blogpost.defaultProps = {
+  classes: null,
+};
+
 Blogpost.propTypes = {
   node: PropTypes.shape({
     frontmatter: PropTypes.shape({
@@ -76,4 +84,5 @@ Blogpost.propTypes = {
     }).isRequired,
   }).isRequired,
   size: PropTypes.string.isRequired,
+  classes: PropTypes.string,
 };

@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 
 import { StyledBlogList, StyledBlogArticle } from './styles';
 
-export default function ConditionalWrapper({ condition, children }) {
+export default function ConditionalWrapper({ condition, children, classes }) {
   return condition ? (
-    <StyledBlogList>{children}</StyledBlogList>
+    <StyledBlogList className={classes}>{children}</StyledBlogList>
   ) : (
-    <StyledBlogArticle>{children}</StyledBlogArticle>
+    <StyledBlogArticle className={classes}>{children}</StyledBlogArticle>
   );
 }
+
+ConditionalWrapper.defaultProps = {
+  classes: null,
+};
 
 ConditionalWrapper.propTypes = {
   condition: PropTypes.bool.isRequired,
   children: PropTypes.arrayOf(PropTypes.any).isRequired,
+  classes: PropTypes.string,
 };
